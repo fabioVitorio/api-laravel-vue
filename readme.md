@@ -9,14 +9,14 @@ Este projeto consiste em uma API de autenticação desenvolvida com **Laravel 12
 - **Banco de Dados:** MySQL
 - **Autenticação:** Token-based com Sanctum  
 
-## 📌 Instalação e Configuração  
+### 📌 Instalação e Configuração  
 
-### 🖥️ Backend (Laravel 12)  
+## 🖥️ Backend (Laravel 12)  
 
 1. Clone o repositório:  
    ```bash
    git clone https://github.com/fabioVitorio/api-laravel-vue
-   cd seu-repositorio/backend
+   cd taskflow/taskflow-backend
    ```
    
 2. Instale as dependências:  
@@ -40,7 +40,7 @@ Este projeto consiste em uma API de autenticação desenvolvida com **Laravel 12
    php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
    php artisan migrate
    ```
-   
+
 6. Execute o servidor:  
    ```bash
    php artisan serve
@@ -48,3 +48,48 @@ Este projeto consiste em uma API de autenticação desenvolvida com **Laravel 12
 
 O backend estará rodando em http://127.0.0.1:8000/
 
+## 🖥️ Frontend (Vue.js 3)  
+
+1. Acesse o diretório do frontend:  
+   ```bash
+   cd taskflow/taskflow-frontend
+   ```
+
+2. Instale as dependências:  
+   ```bash
+   npm install
+   ```
+
+3. Instale as dependências:  
+   ```bash
+   npm run dev
+   ```
+
+O frontend estará rodando em http://localhost:5173/
+
+## 🔗 Rotas da API  
+
+A API conta com as seguintes rotas de autenticação:  
+
+### 📌 Autenticação  
+
+#### 📍 Registrar usuário  
+- **Método:** `POST`  
+- **Endpoint:** `/register`  
+- **Descrição:** Registra um novo usuário  
+- **Autenticação:** ❌ Não requer  
+
+#### 📍 Login  
+- **Método:** `POST`  
+- **Endpoint:** `/login`  
+- **Descrição:** Faz login e retorna um token de autenticação  
+- **Autenticação:** ❌ Não requer  
+
+#### 📍 Logout  
+- **Método:** `POST`  
+- **Endpoint:** `/logout`  
+- **Descrição:** Encerra a sessão do usuário  
+- **Autenticação:** ✅ Requer token  
+
+> **Obs.:** A rota de logout está protegida e requer autenticação via **Bearer Token (Sanctum)**.  
+ 
