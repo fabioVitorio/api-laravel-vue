@@ -76,6 +76,8 @@ A API conta com as seguintes rotas de autenticação:
 | POST   | `/register` | Registra um novo usuário | ❌ Não requer |
 | POST   | `/login`    | Faz login e retorna token | ❌ Não requer |
 | POST   | `/logout`   | Encerra a sessão do usuário | ✅ Requer token |
+| GET   | `/status`    | Verifica se a API está online | ❌ Não requer |
+
 
 > **Obs.:** A rota de logout está protegida e requer autenticação via **Bearer Token (Sanctum)**.  
 
