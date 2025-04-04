@@ -71,25 +71,18 @@ O frontend estará rodando em http://localhost:5173/
 
 A API conta com as seguintes rotas de autenticação:  
 
-### 📌 Autenticação  
-
-#### 📍 Registrar usuário  
-- **Método:** `POST`  
-- **Endpoint:** `/register`  
-- **Descrição:** Registra um novo usuário  
-- **Autenticação:** ❌ Não requer  
-
-#### 📍 Login  
-- **Método:** `POST`  
-- **Endpoint:** `/login`  
-- **Descrição:** Faz login e retorna um token de autenticação  
-- **Autenticação:** ❌ Não requer  
-
-#### 📍 Logout  
-- **Método:** `POST`  
-- **Endpoint:** `/logout`  
-- **Descrição:** Encerra a sessão do usuário  
-- **Autenticação:** ✅ Requer token  
+| Método | Endpoint   | Descrição                 | Autenticação |
+|--------|-----------|---------------------------|--------------|
+| POST   | `/register` | Registra um novo usuário | ❌ Não requer |
+| POST   | `/login`    | Faz login e retorna token | ❌ Não requer |
+| POST   | `/logout`   | Encerra a sessão do usuário | ✅ Requer token |
 
 > **Obs.:** A rota de logout está protegida e requer autenticação via **Bearer Token (Sanctum)**.  
+
+### 📌 Como Funciona 
+O usuário pode registrar e fazer login através do Vue.js, que consome a API.
+
+O token de autenticação é armazenado no localStorage e incluído nas requisições para acessar as rotas protegidas.
+
+O logout remove o token e finaliza a sessão do usuário.
  
