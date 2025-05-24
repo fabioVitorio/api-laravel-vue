@@ -69,7 +69,7 @@ O frontend estará rodando em http://localhost:5173/
 
 ## 🔗 Rotas da API  
 
-A API conta com as seguintes rotas de autenticação:  
+🔐 API Auth:  
 
 | Método | Endpoint   | Descrição                 | Autenticação |
 |--------|-----------|---------------------------|--------------|
@@ -78,8 +78,18 @@ A API conta com as seguintes rotas de autenticação:
 | POST   | `/logout`   | Encerra a sessão do usuário | ✅ Requer token |
 | GET   | `/status`    | Verifica se a API está online | ❌ Não requer |
 
+📑 API Tasks: 
 
-> **Obs.:** A rota de logout está protegida e requer autenticação via **Bearer Token (Sanctum)**.  
+| Método | Endpoint        | Descrição                        | Autenticação |
+|--------|-----------------|----------------------------------|--------------|
+| GET    | `/api/tasks`    | Lista todas as tasks do usuário | ✅ Requer token |
+| POST   | `/api/tasks`    | Cria uma nova task              | ✅ Requer token |
+| GET    | `/api/tasks/{id}` | Exibe os detalhes de uma task | ✅ Requer token |
+| PUT    | `/api/tasks/{id}` | Atualiza uma task existente    | ✅ Requer token |
+| PATCH  | `/api/tasks/{id}` | Atualiza parcialmente uma task | ✅ Requer token |
+| DELETE | `/api/tasks/{id}` | Deleta uma task                | ✅ Requer token |
+
+> **Obs.:** As rotas protegidas requerem autenticação via **Bearer Token (Sanctum)**.  
 
 ### 📌 Como Funciona 
 O usuário pode registrar e fazer login através do Vue.js, que consome a API.
