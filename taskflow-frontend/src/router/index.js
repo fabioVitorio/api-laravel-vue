@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Login from '../views/Login.vue';
-import Cadastro from '../views/Cadastro.vue';
+import Login from '../views/login/Login.vue';
+import Cadastro from '../views/register/Register.vue';
 
 const routes = [
   {
@@ -9,8 +9,8 @@ const routes = [
     component: Login,
   },
   {
-    path: '/cadastro',
-    name: 'Cadastro',
+    path: '/register',
+    name: 'Register',
     component: Cadastro,
   },
   // Adicione outras rotas aqui...
