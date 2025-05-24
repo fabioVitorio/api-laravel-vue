@@ -81,11 +81,11 @@ class TaskController extends Controller
             ->first();
 
         if (!$task) {
-            return response()->json(['message' => 'Tarefa não encontrada'], 404);
+            return response()->json(['message' => 'task not found'], 404);
         }
 
         $task->delete();
 
-        return response()->json(['message' => 'Tarefa excluída com sucesso']);
+        return response()->json(['message' => 'Task deleted successfully'], 200);
     }
 }
