@@ -10,7 +10,7 @@ export default {
         };
     },
     methods: {
-        cadastro() {
+        register() {
             api.post('/register', {
                 name: this.name,
                 email: this.email,
