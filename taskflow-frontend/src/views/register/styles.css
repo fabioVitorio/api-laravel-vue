@@ -21,6 +21,21 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+#errorVerify{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: red;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+#errorVerify > p{
+  margin: 0;
+  color: #fff;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 30px;

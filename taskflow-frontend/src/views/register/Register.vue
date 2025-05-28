@@ -1,7 +1,10 @@
 <template>
     <div class="cadastro-container">
         <div class="cadastro-box">
-            <h1>Cadastro</h1>
+            <div v-if="error" id="errorVerify">
+                <p>{{ error }}</p>
+            </div>
+            <h1>TASKflow CADASTRO</h1>
             <form @submit.prevent="register">
                 <div class="form-group">
                     <label for="nome">Nome</label>
@@ -17,7 +20,6 @@
                 </div>
 
                 <button type="submit" class="cadastro-button">Cadastrar</button>
-                <p v-if="error" class="error-message">{{ error }}</p>
                 <p class="text-center">Retornar ao <router-link to="/login">Login</router-link></p>
 
             </form>

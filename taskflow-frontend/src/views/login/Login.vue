@@ -2,9 +2,9 @@
   <div class="login-container">
     <div class="login-box">
       <div v-if="error" id="errorSenha">
-        <p>Usuário ou senha inválido(s)</p>
+        <p>{{ error }}</p>
       </div>
-      <h1>Login</h1>
+      <h1>TASKflow LOGIN</h1>
       <form @submit.prevent="login">
         <div class="form-group">
           <label for="email">Email</label>
@@ -17,7 +17,9 @@
 
         <button type="submit" class="login-button">Entrar</button>
         <p class="text-center">Não tem uma conta? <router-link to="/register">Registrar</router-link></p>
+        <p class="text-center" @click="logout">Logout</p>
       </form>
+
     </div>
   </div>
 </template>
