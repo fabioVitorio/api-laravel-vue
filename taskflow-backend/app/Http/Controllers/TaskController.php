@@ -24,7 +24,7 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'required|string|in:pendente,em andamento,concluída',
+            'status' => 'required|string|in:pendente,em andamento, concluída, cancelada',
         ]);
 
         $task = Task::create([

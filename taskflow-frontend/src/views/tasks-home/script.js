@@ -1,5 +1,7 @@
 import api from '../../services/api';
 
+
+
 export default {
   methods: {
     logout() {
