@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center bg-blue-50">
+  <div class="min-h-screen flex flex-col items-center justify-center bg-blue-50 p-4">
     <div class="bg-white rounded-2xl shadow-md p-8 space-y-6 flex flex-col items-center w-full max-w-[450px]">
 
       <div class="flex items-center justify-center space-x-3">
@@ -43,15 +43,16 @@
           <span>Criar Tarefa</span>
         </button>
 
-        <button
-          class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
+        <router-link
+          to="/tasks/list"
+          class="w-full !bg-purple-600 !hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
           <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
             <circle cx="12" cy="7" r="4" stroke-width="2" />
             <path d="M5.5 21a6.5 6.5 0 0113 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <span>Perfil</span>
-        </button>
+        </router-link>
 
         <button @click="logout()"
           class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">

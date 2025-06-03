@@ -17,7 +17,7 @@ export default {
         .then(response => {
           const token = response.data.token;
           localStorage.setItem('access_token', token);
-          this.$router.push('/tasks');
+          this.$router.push('/home');
         })
         .catch(error => {
           this.error = 'Usuário ou senha inválido(s)';
