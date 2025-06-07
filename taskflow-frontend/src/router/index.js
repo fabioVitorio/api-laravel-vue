@@ -20,6 +20,11 @@ const routes = [
     component: () => import('../views/task-list/List.vue'), 
     meta: { requiresAuth: true } 
   },
+  { path: '/tasks/create', 
+    name: 'TasksCreate', 
+    component: () => import('../views/task-create/Create.vue'), 
+    meta: { requiresAuth: true } 
+  },
 ];
 
 

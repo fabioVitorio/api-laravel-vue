@@ -26,14 +26,15 @@
                     Voltar
                 </router-link>
 
-                <button @click="goToCreate"
-                    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
+                <router-link
+                    to="/tasks/create"
+                    class="flex items-center gap-2 !bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <line x1="12" y1="5" x2="12" y2="19" stroke-width="2" stroke-linecap="round" />
                         <line x1="5" y1="12" x2="19" y2="12" stroke-width="2" stroke-linecap="round" />
                     </svg>
                     Nova Tarefa
-                </button>
+                </router-link>
             </div>
 
             <div class="bg-white rounded-md shadow-xl p-6 space-y-4">
