@@ -22,8 +22,9 @@
       </div>
 
       <div class="flex flex-col gap-4 w-full">
-        <button
-          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
+        <router-link
+          to="/tasks/list"
+          class="w-full !bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
           <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
             <rect x="3" y="4" width="18" height="4" rx="1" ry="1" stroke-width="2" />
@@ -31,21 +32,22 @@
             <rect x="3" y="16" width="18" height="4" rx="1" ry="1" stroke-width="2" />
           </svg>
           <span>Listar Tarefas</span>
-        </button>
+        </router-link>
 
-        <button
-          class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
+        <router-link
+          to="/tasks/create"
+          class="w-full !bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
           <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
             <line x1="12" y1="5" x2="12" y2="19" stroke-width="2" stroke-linecap="round" />
             <line x1="5" y1="12" x2="19" y2="12" stroke-width="2" stroke-linecap="round" />
           </svg>
           <span>Criar Tarefa</span>
-        </button>
+        </router-link>
 
         <router-link
-          to="/tasks/list"
-          class="w-full !bg-purple-600 !hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
+          to="/profile"
+          class="w-full !bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
           <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
             <circle cx="12" cy="7" r="4" stroke-width="2" />
@@ -55,7 +57,7 @@
         </router-link>
 
         <button @click="logout()"
-          class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group">
+          class="w-full bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group cursor-pointer">
           <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
             <path d="M16 17l5-5m0 0l-5-5m5 5H9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

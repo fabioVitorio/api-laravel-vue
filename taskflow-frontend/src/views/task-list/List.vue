@@ -37,7 +37,11 @@
             </div>
 
             <div class="bg-white rounded-md shadow-xl p-6 space-y-4">
-                <div v-if="tasks.length === 0" class="text-center text-gray-500">
+                <div v-if="isLoading" class="text-center text-gray-500">
+                    Carregando tarefas...
+                </div>
+
+                <div v-else-if="tasks.length === 0" class="text-center text-gray-500">
                     Nenhuma tarefa cadastrada.
                 </div>
 
@@ -60,28 +64,18 @@
                         <div class="flex gap-2">
                             <button @click="editTask(task.id)"
                                 class="flex items-center gap-1 bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M15.232 5.232l3.536 3.536M9 11l6-6 3 3-6 6H9v-3z" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16 21H4a1 1 0 01-1-1V7a1 1 0 011-1h11" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
                                 Editar
                             </button>
 
                             <button @click="deleteTask(task.id)"
-                                class="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md transition">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0H7"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                class="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md transition cursor-pointer">
                                 Deletar
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="text-center">
                 <p class="text-sm text-gray-400">TASKflow v1.0</p>

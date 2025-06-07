@@ -13,6 +13,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
+// Route::post('/tasks', [TaskController::class, 'store']);
 
 // task routes
 Route::middleware('auth:sanctum')->group(function () {
@@ -22,3 +23,4 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::get('/status', function () {
     return response()->json(['message' => 'API conectada'], 200);
 });
+
