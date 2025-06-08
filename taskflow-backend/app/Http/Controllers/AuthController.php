@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 
 class AuthController extends Controller
 {
@@ -20,6 +21,12 @@ class AuthController extends Controller
         }
 
         $user = User::where('email', $request->email)->first();
+
+        if (!$user->hasVerifiedEmail()) {
+            return response()->json([
+                'message' => 'email not verified.'
+            ], 403);
+        }
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
@@ -41,6 +48,7 @@ class AuthController extends Controller
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;
+        event(new Registered($user));
 
         return response()->json([
             'user' => $user,

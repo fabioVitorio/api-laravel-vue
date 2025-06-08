@@ -15,7 +15,7 @@
       </div>
 
       <div class="bg-white rounded-2xl shadow-xl">
-        <div class="p-6 space-y-1">
+        <div class="p-3 space-y-1">
           <h2 class="text-2xl font-bold text-center">Entrar</h2>
           <p class="text-center text-sm text-gray-600">
             Digite suas credenciais para acessar sua conta
@@ -25,6 +25,10 @@
         <div class="p-6">
           <div v-if="error" class="bg-red-100 text-red-700 px-4 py-2 rounded-md mb-4 text-center">
             {{ error }}
+          </div>
+
+          <div v-if="success" class="bg-green-100 text-green-700 px-4 py-2 rounded-md mb-4 text-center">
+            {{ success }}
           </div>
 
           <form @submit.prevent="login" class="space-y-4">

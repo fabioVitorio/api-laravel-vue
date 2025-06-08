@@ -6,8 +6,4 @@ Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
-Route::get('/api/tasks', function () {
-    return ['status' => 'GET api/tasks web route hit'];
-});
-
 require __DIR__.'/auth.php';

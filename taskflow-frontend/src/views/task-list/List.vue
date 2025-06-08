@@ -48,7 +48,7 @@
 
                 <div v-else>
                     <div v-for="task in tasks" :key="task.id"
-                        class="flex items-center justify-between border border-gray-200 p-4 hover:shadow-md transition mb-4">
+                        class="flex items-center justify-between border border-gray-200 p-4 hover:shadow-md transition mb-4 cursor-pointer">
                         <div class="p-4 rounded-lg">
                             <h2 class="text-xl font-bold">{{ task.title }}</h2>
                             <p class="text-gray-600">{{ task.description }}</p>

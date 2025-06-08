@@ -6,6 +6,7 @@ export default {
       email: '',
       password: '',
       error: null,
+      success: null,
     };
   },
   methods: {
@@ -17,6 +18,7 @@ export default {
         .then(response => {
           const token = response.data.token;
           localStorage.setItem('access_token', token);
+          localStorage.setItem('email_verified', response.data.user.email_verified_at ? 'true' : 'false');
           this.$router.push('/home');
         })
         .catch(error => {
@@ -40,4 +42,12 @@ export default {
         });
     }
   },
+
+  mounted() {
+    const message = history.state?.success;
+    if (message) {
+      this.success = message;
+      history.replaceState({}, document.title);
+    }
+  }
 };

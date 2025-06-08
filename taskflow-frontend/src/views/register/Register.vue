@@ -16,7 +16,7 @@
             </div>
 
             <div class="bg-white rounded-2xl shadow-xl">
-                <div class="p-6 space-y-1">
+                <div class="p-3 space-y-1">
                     <h2 class="text-2xl font-bold text-center">Cadastrar</h2>
                     <p class="text-center text-sm text-gray-600">
                         Crie sua conta para começar a gerenciar suas tarefas
@@ -47,6 +47,13 @@
                         <div class="space-y-2">
                             <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
                             <input id="password" type="password" v-model="password" placeholder="Sua senha"
+                                class="block w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Conf. senha</label>
+                            <input id="conf_password" type="password" v-model="conf_password" placeholder="Confirme sua senha"
                                 class="block w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 required />
                         </div>
