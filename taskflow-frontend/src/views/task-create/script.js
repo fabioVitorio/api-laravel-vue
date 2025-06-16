@@ -21,6 +21,10 @@ export default {
         console.error('Erro ao criar tarefa:', error);
         alert('Erro ao criar tarefa. Tente novamente.');
       }
+    },
+
+    goBack() {
+      this.$router.back();
     }
   }
 };
