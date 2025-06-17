@@ -26,8 +26,7 @@
                     Voltar
                 </router-link>
 
-                <router-link
-                    to="/tasks/create"
+                <router-link to="/tasks/create"
                     class="flex items-center gap-2 !bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <line x1="12" y1="5" x2="12" y2="19" stroke-width="2" stroke-linecap="round" />
@@ -38,6 +37,10 @@
             </div>
 
             <div class="bg-white rounded-md shadow-xl p-6 space-y-4">
+                <div v-if="successMessage" class="text-center bg-green-100 text-green-800 p-3 mb-4 rounded">
+                    {{ successMessage }}
+                </div>
+                
                 <div v-if="isLoading" class="text-center text-gray-500">
                     Carregando tarefas...
                 </div>
@@ -63,8 +66,8 @@
                         </div>
 
                         <div class="flex gap-2">
-                            <button @click="editTask(task.id)"
-                                class="flex items-center gap-1 bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition">
+                            <button @click="updateTask(task.id)"
+                                class="flex items-center gap-1 bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition cursor-pointer">
                                 Editar
                             </button>
 

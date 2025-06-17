@@ -29,6 +29,12 @@ const routes = [
     component: () => import('../views/task-create/Create.vue'),
     meta: { requiresAuth: true }
   },
+  {
+    path: '/tasks/update/:id',
+    name: 'TasksUpdate',
+    component: () => import('../views/task-update/Update.vue'),
+    meta: { requiresAuth: true }
+  },
 ];
 
 

@@ -12,13 +12,12 @@
           </div>
           <h1 class="text-2xl font-bold text-blue-600">TASKflow</h1>
         </div>
-        <h2 class="text-3xl font-bold text-gray-800 mt-4">Nova Tarefa</h2>
-        <p class="text-gray-600">Crie uma nova tarefa para manter seu fluxo de trabalho organizado</p>
+        <h2 class="text-3xl font-bold text-gray-800 mt-4">Editar Tarefa</h2>
+        <p class="text-gray-600">Edite sua tarefa para manter seu fluxo de trabalho organizado</p>
       </div>
 
       <div class="flex justify-start">
-        <button @click="goBack"
-          class="flex items-center gap-2 font-medium px-4 py-2 rounded-lg transition cursor-pointer">
+        <button @click="goBack" class="flex items-center gap-2 font-medium px-4 py-2 rounded-lg transition cursor-pointer">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -27,7 +26,7 @@
       </div>
 
       <div class="bg-white rounded-md shadow-xl p-6 space-y-4">
-        <form @submit.prevent="submitTask" class="space-y-4">
+        <form v-if="!loading" @submit.prevent="updateTask" class="space-y-4">
           <div>
             <label class="block mb-1 text-gray-700 font-medium">Título</label>
             <input v-model="title" type="text" required
@@ -57,6 +56,8 @@
             Salvar Tarefa
           </button>
         </form>
+
+        <div v-else class="text-center text-gray-500">Carregando tarefa...</div>
       </div>
 
       <div class="text-center">
@@ -65,5 +66,6 @@
     </div>
   </div>
 </template>
+
 
 <script src="./script.js"></script>

@@ -5,6 +5,7 @@ export default {
     return {
       tasks: [],
       error: null,
+      successMessage: null,
       isLoading: true,
     }
   },
@@ -24,12 +25,8 @@ export default {
         });
     },
 
-    goToCreate() {
-      this.$router.push('/create-task')
-    },
-
-    editTask(id) {
-      this.$router.push(`/edit-task/${id}`)
+    updateTask(id) {
+      this.$router.push(`/tasks/update/${id}`)
     },
 
     deleteTask(id) {
@@ -55,5 +52,13 @@ export default {
 
   mounted() {
     this.getTasks();
+    const successMessage = history.state?.successMessage;
+    if (successMessage) {
+      this.successMessage = successMessage;
+      history.replaceState({}, document.title);
+      setTimeout(() => {
+        this.successMessage = null;
+      }, 5000);
+    }
   },
 }
